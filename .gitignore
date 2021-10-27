@@ -1,0 +1,7 @@
+script_test.sh
+*.a
+*.o
+.vscode
+puchi_debug.dSYM
+puchi_debug
+push_swap_tester
