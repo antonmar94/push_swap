@@ -5,3 +5,6 @@ script_test.sh
 puchi_debug.dSYM
 puchi_debug
 push_swap_tester
+push_swap
+checker
+checker_Mac

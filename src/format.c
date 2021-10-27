@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:17:12 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/27 14:18:51 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:44:21 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,27 +83,30 @@ int	dup_in_list(t_plist *list)
 	return (0);
 }
 
-void	print_list(t_plist *a_list, t_plist *b_list)
+int	create_list(t_plist **a_list, char **argv)
 {
-	printf("\033[0;31m A");
-	printf("\033[0;34m%20c\n", 'B');
-	printf("\033[0;31m%-20s\033[0;34m%s\n", "---", "---");
-	printf("\033[0m");
-	while (a_list || b_list)
+	t_plist	*aux_list;
+	char	*clean_word;
+	char	*aux;
+
+	while (*argv)
 	{
-		if (a_list)
+		aux = *argv;
+		while (*aux || **argv == '\0')
 		{
-			printf(" %-20d", a_list->content);
-			a_list = a_list->next;
+			clean_word = *ft_split(aux, ' ');
+			if (check_null(argv, clean_word) == 0)
+				return (-1);
+			aux_list = ft_pslstnew(ft_atoi(clean_word));
+			ft_pslstadd_back(a_list, aux_list);
+			while (*aux == ' ' && *aux)
+				aux++;
+			while (*aux != ' ' && *aux)
+				aux++;
+			while (*aux == ' ' && *aux)
+				aux++;
 		}
-		else
-			printf(" %-20s", " ");
-		if (b_list)
-		{
-			printf("%d\n", b_list->content);
-			b_list = b_list->next;
-		}
-		else
-			printf("\n");
+		argv++;
 	}
+	return (1);
 }

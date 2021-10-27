@@ -6,11 +6,21 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:42:45 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/26 15:47:44 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/27 17:41:57 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
+
+int	check_null(char **argv, char *clean_word)
+{
+	if (!clean_word || **argv == '\0')
+	{
+		write(2, "Error\n", 6);
+		return (0);
+	}
+	return (1);
+}
 
 int	is_orden(t_plist *list)
 {
@@ -70,36 +80,4 @@ int	is_in_list(t_plist *list, t_plist *elemen)
 		aux = aux->next;
 	}
 	return (0);
-}
-
-int	is_thelowest(t_plist *list, t_plist *elemen)
-{
-	t_plist	*aux;
-
-	aux = list;
-	if (!list || !elemen)
-		return (0);
-	while (aux)
-	{
-		if (aux->content < elemen->content)
-			return (0);
-		aux = aux->next;
-	}
-	return (1);
-}
-
-int	is_thebigger(t_plist *list, t_plist *elemen)
-{
-	t_plist	*aux;
-
-	aux = list;
-	if (!list || !elemen)
-		return (0);
-	while (aux)
-	{
-		if (aux->content > elemen->content)
-			return (0);
-		aux = aux->next;
-	}
-	return (1);
 }
