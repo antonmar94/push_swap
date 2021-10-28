@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:43:28 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/27 17:39:47 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:44:44 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void		rotate_rrr(t_plist **a_list, t_plist **b_list);
 void		single_movea(t_pslist *a_list, t_pslist *b_list, char oper);
 void		single_moveb(t_pslist *a_list, t_pslist *b_list, char oper);
 void		both_move(t_pslist *a_list, t_pslist *b_list, char oper);
+char		*ft_clean(char *str);
 int			test_error(char **arg_list);
 int			check_null(char **argv, char *clean_word);
 int			create_list(t_plist **a_list, char **argv);
@@ -56,13 +57,9 @@ int			is_invorden(t_plist *list);
 int			dup_in_list(t_plist *list);
 void		del_function(t_plist *a_list);
 t_plist		*get_pivote(t_plist *list, int len);
-//int			is_thelowest(t_plist *list, t_plist *elemen);
-//int			is_thebigger(t_plist *list, t_plist *elemen);
 void		ft_pslstadd_back(t_plist **lst, t_plist *new_list);
-int			is_in_list(t_plist *list, t_plist *elemen);
 t_plist		*ft_pslstnew(long long content);
 t_pslist	*ft_pstlstnew(t_plist *list);
-void		print_list(t_plist *a_list, t_plist *b_list);
 int			divide_alist(t_pslist *a_list, t_pslist *b_list, int len);
 int			divide_blist(t_pslist *a_list, t_pslist *b_list, int len);
 int			ordenation_short(t_pslist *a_list, t_pslist *b_list);

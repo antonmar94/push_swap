@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:17:12 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/27 17:44:21 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/28 20:58:35 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	minus_checker(char *str)
 		if (*str == '-' && *str)
 		{
 			str++;
-			if (ft_isdigit(*str) == 0 || *str == '0')
+			if (ft_isdigit(*str) == 0)
 				return (0);
 		}
 		str++;
@@ -85,17 +85,17 @@ int	dup_in_list(t_plist *list)
 
 int	create_list(t_plist **a_list, char **argv)
 {
-	t_plist	*aux_list;
 	char	*clean_word;
 	char	*aux;
+	t_plist	*aux_list;
 
 	while (*argv)
 	{
 		aux = *argv;
 		while (*aux || **argv == '\0')
 		{
-			clean_word = *ft_split(aux, ' ');
-			if (check_null(argv, clean_word) == 0)
+			clean_word = ft_clean(aux);
+			if (*clean_word == '\0' || check_null(argv, clean_word) == 0)
 				return (-1);
 			aux_list = ft_pslstnew(ft_atoi(clean_word));
 			ft_pslstadd_back(a_list, aux_list);
