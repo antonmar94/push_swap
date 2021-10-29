@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:17:12 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/28 20:58:35 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/29 15:05:22 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,8 @@ int	test_error(char **arg_list)
 		while (arg_list[i][j])
 		{
 			if (ft_isdigit(arg_list[i][j]) == 0
-				&& arg_list[i][j] != ' ' && arg_list[i][j] != '-')
+				&& arg_list[i][j] != ' ' && arg_list[i][j] != '-'
+				&& arg_list[i][j] != '+')
 				return (1);
 			j++;
 		}
@@ -99,7 +100,7 @@ int	create_list(t_plist **a_list, char **argv)
 				return (-1);
 			aux_list = ft_pslstnew(ft_atoi(clean_word));
 			ft_pslstadd_back(a_list, aux_list);
-			while (*aux == ' ' && *aux)
+			while ((*aux == ' ') && *aux)
 				aux++;
 			while (*aux != ' ' && *aux)
 				aux++;

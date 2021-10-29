@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:49:44 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/28 21:11:12 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/29 15:11:33 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int	main(int argc, char **argv)
 	ta_list = ft_pstlstnew(a_list);
 	tb_list = ft_pstlstnew(b_list);
 	ordenation_recura(ta_list, tb_list, ft_plstsize(ta_list->list));
-	return (0);
+	exit (0);
 }

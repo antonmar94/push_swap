@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 17:40:42 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/25 18:34:27 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/29 14:22:46 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	ft_atoi(const char *str)
 	{
 		res = str[i] - 48 + res * 10;
 		if (res * simb >= 2147483648)
-			return (0);
+			return (-1);
 		else if (res * simb < -2147483648)
 			return (-1);
 		i++;

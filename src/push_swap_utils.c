@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:42:45 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/28 20:57:18 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/10/29 15:06:18 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ char	*ft_clean(char *str)
 	temp = res;
 	while (*aux && *aux == ' ')
 		aux++;
-	while (*res && (ft_isdigit(*res) || *aux == '-'))
+	while (*res && (ft_isdigit(*res) || *aux == '-' || *aux == '+'))
 		res++;
-	while (*aux && (ft_isdigit(*aux) || *aux == '-'))
+	while (*aux && (ft_isdigit(*aux) || *aux == '-' || *aux == '+'))
 	{
 		res[i] = *aux;
 		aux++;
