@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:49:44 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/29 15:14:07 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/11/01 13:47:56 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,14 @@ int	main(int argc, char **argv)
 	if (argc < 1 || test_error(argv) == 1)
 	{
 		write(2, "Error\n", 6);
-		return (-1);
+		exit (-1);
 	}
 	argv++;
 	if (create_list(&a_list, argv) == -1 || dup_in_list(a_list))
 	{
 		del_function(a_list);
 		write(2, "Error\n", 6);
-		return (-1);
+		exit (-1);
 	}
 	b_list = NULL;
 	ta_list = ft_pstlstnew(a_list);

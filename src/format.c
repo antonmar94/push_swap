@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:17:12 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/29 15:05:22 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/11/01 13:44:25 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,12 @@ void	del_function(t_plist *node)
 {
 	t_plist	*aux;
 
-	while (node != NULL)
+	while (node)
 	{
 		aux = node;
 		free(node);
-		node->next = NULL;
 		node = aux->next;
 	}
-	aux = NULL;
 }
 
 int	minus_checker(char *str)

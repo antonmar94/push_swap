@@ -34,9 +34,6 @@ fclean: clean
 	make -C $(LIBFT_DIR) fclean
 	$(RM) $(NAME)
 
-debug: $(LIBFT_DIR)$(LIBFT_NAME) $(OBJS)
-	$(CC) -g $(SRCS) $(LIBFT_DIR)$(LIBFT_NAME) -o puchi_debug
-
 re: clean all
 
 .PHONY: all clean fclean re

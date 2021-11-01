@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/20 13:43:28 by antonmar          #+#    #+#             */
-/*   Updated: 2021/10/28 20:44:44 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/11/01 11:57:41 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct pas_list
 	int				size;
 	struct ps_list	*last_orden;
 }				t_pslist;
+int			main(int argc, char **argv);
 void		swap_a(t_plist **stack);
 void		swap_b(t_plist **stack);
 void		swap_ss(t_plist **a_list, t_plist **b_list);
