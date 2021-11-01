@@ -6,7 +6,7 @@
 /*   By: antonmar <antonmar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 15:17:12 by antonmar          #+#    #+#             */
-/*   Updated: 2021/11/01 14:00:13 by antonmar         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:09:30 by antonmar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	minus_checker(char *str)
 {
 	while (*str)
 	{
-		if (*str == '-' && *str)
+		if ((*str == '-' || *str == '+') && *str)
 		{
 			str++;
 			if (ft_isdigit(*str) == 0)
